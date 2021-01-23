@@ -101,14 +101,13 @@
 					<a href="#" class="d-block">KIP UKRIM</a>
 				</div>
 			</div>
-
 			<!-- Sidebar Menu -->
 			<nav class="mt-2">
 				<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
 					data-accordion="false">
 					<!-- Add icons to the links using the .nav-icon class
 				 with font-awesome or any other icon font library -->
-					<?php if ($this->session->userdata("role") == 'mahasiswa') { ?>
+					<?php if ($this->session->userdata("nim")) { ?>
 						<li class="nav-header">MENU USER</li>
 						<li class="nav-item has-treeview">
 							<a href="#" class="nav-link">
@@ -166,6 +165,14 @@
 								</p>
 							</a>
 							<ul class="nav nav-treeview">
+							<li class="nav-item">
+									<a href="<?= site_url("mahasiswa") ?>" class="nav-link">
+										<i class="nav-icon fas fa-x-ray"></i>
+										<p>
+											Mahasiswa
+										</p>
+									</a>
+								</li>
 								<li class="nav-item">
 									<a href="<?= site_url("perolehan") ?>" class="nav-link">
 										<i class="nav-icon fas fa-x-ray"></i>

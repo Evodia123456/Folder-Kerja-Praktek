@@ -19,9 +19,8 @@ class Softskill extends CI_Controller
 //		$softskillList = $this->SoftskillModel->getAll();
 		$nimSession = $this->session->userdata('nim');
 		$idSession = $this->session->userdata('idMhs');
-		$softskillList = $this->SoftskillModel->joinTabel($nimSession, $idSession);
-//		var_dump($softskillList);
-//		die();
+		$softskillList = $this->SoftskillModel->getSoftskil($nimSession, $idSession);
+//		$softskillList = $this->SoftskillModel->joinTabel($nimSession, $idSession);
 		//2. Kirimkan data ke view
 		$data = array(
 			"softskillList" => $softskillList,
