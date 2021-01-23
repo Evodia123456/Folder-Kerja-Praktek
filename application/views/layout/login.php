@@ -28,7 +28,7 @@
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
-      <form action="<?=site_url('login/verify')?>" method="post">
+      <form action="<?=site_url('login/login')?>" method="post">
           <div class="input-group mb-3">
           <input type="email" name="email_user" class="form-control" placeholder="email"/>
           <div class="input-group-append">
