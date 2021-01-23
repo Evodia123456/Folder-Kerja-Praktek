@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ad52f98-1604-4f80-a129-09ee490a9d90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cobakip (8).sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Mahasiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Mahasiswa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Softskill.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Softskill.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/LoginModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/LoginModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/SoftskillModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/SoftskillModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/content/mahasiswa/v_form_mahasiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/mahasiswa/v_form_mahasiswa.php" afterDir="false" />
+    <list default="true" id="6ad52f98-1604-4f80-a129-09ee490a9d90" name="Default Changelist" comment="update admin and adding form mahasiswa">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/layout/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layout/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/layoutuser/mainuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layoutuser/mainuser.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +15,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1nU096WcGI9BgXdSsfKfJ4eThx0" />
@@ -48,8 +46,23 @@
       <updated>1611429214637</updated>
       <workItem from="1611429221523" duration="1778000" />
       <workItem from="1611431049305" duration="1775000" />
-      <workItem from="1611432882383" duration="1353000" />
+      <workItem from="1611432882383" duration="1720000" />
     </task>
+    <task id="LOCAL-00001" summary="update admin and adding form mahasiswa">
+      <created>1611434403115</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611434403115</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update admin and adding form mahasiswa">
+      <created>1611434510424</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1611434510424</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -66,5 +79,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update admin and adding form mahasiswa" />
+    <option name="LAST_COMMIT_MESSAGE" value="update admin and adding form mahasiswa" />
   </component>
 </project>
