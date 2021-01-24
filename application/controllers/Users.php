@@ -99,8 +99,6 @@ class Users extends CI_Controller {
                 "is_active" => "1",
             
             );
-//            var_dump($data);
-//            die();
             $query = $this->UserModel->updates($id, $data);
             if ($query) {
                 $message = array('message' => "Anda berhasil mengubah data User", 'color' => "info");

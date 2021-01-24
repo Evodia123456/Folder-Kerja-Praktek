@@ -60,7 +60,7 @@ class Login extends CI_Controller
     {
         $email = trim($this->input->post('email_user'));
         $password = $this->input->post('password_user');
-        $dosen = $this->LoginModel->getByEmailAndPassword($email, $password);
+        $dosen = $this->LoginModel->getLoginUser($email, $password);
         $query = $this->LoginModel->getLogin($email, $password);
         if ($query == null) {
             $message = array(

@@ -75,9 +75,19 @@ class LoginModel extends CI_Model
         return $query;
     }
 
-    public function getLogin($username, $password)
+    public function getLoginMhs($username, $password)
     {
         $query = $this->db->query("SELECT * from mahasiswa where email = '$username'");
+        $row = $query->row();
+        if (password_verify($password, $row->password)) {
+            return $query->row();
+        } else {
+            return false;
+        }
+    }
+    public function getLoginUser($username, $password)
+    {
+        $query = $this->db->query("SELECT * from user where email = '$username'");
         $row = $query->row();
         if (password_verify($password, $row->password)) {
             return $query->row();
