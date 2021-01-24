@@ -71,7 +71,7 @@ class Login extends CI_Controller
             $this->session->set_flashdata('message', $message);
             redirect('login');
         } else {
-            if ($query) {
+            if ($dosen) {
                 $dataSession = array(
                     "idMhs" => $query->id_mahasiswa,
                     "nim" => $query->nim,
@@ -80,7 +80,7 @@ class Login extends CI_Controller
                     "jk" => $query->jk,
                     "is_login_pwl" => true,
                 );
-            } elseif ($dosen) {
+            } elseif ($query) {
                 $dataSession = array(
                     "id" => $query->id_user,
                     "nama" => $query->nama_user,

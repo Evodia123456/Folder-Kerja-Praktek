@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2021 at 06:54 PM
+-- Generation Time: Jan 23, 2021 at 10:05 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -121,18 +121,22 @@ CREATE TABLE `mahasiswa` (
   `jk` enum('''Laki-laki''','''Perempuan''','','') NOT NULL,
   `alamat` text NOT NULL,
   `tgl_lahir` date NOT NULL,
-  `tgl_pelaksanaan` date NOT NULL,
-  `id_ipk` int(11) NOT NULL,
-  `gambar` text NOT NULL
+  `id_ipk` int(11) DEFAULT NULL,
+  `gambar` text NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `jk`, `alamat`, `tgl_lahir`, `tgl_pelaksanaan`, `id_ipk`, `gambar`) VALUES
-(1, 1742101599, 'Evodia', '\'Perempuan\'', 'kkk', '2020-09-22', '0000-00-00', 0, ''),
-(2, 34634195, 'Joko', '\'Laki-laki\'', 'dkjhfdfhdlk', '2020-12-30', '2020-12-01', 334, '');
+INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `jk`, `alamat`, `tgl_lahir`, `id_ipk`, `gambar`, `email`, `password`) VALUES
+(1, 1742101599, 'Evodia', '\'Perempuan\'', 'kkk', '2020-09-22', 0, '', NULL, NULL),
+(2, 34634195, 'Joko', '\'Laki-laki\'', 'dkjhfdfhdlk', '2020-12-30', 334, '', NULL, NULL),
+(3, 1742101599, 'aku', '', 'wewe', '2021-01-11', 3, '', 'evodiasusanti@gmail.come', '$2y$10$HYGuXmAQbPxJxHqhxxrsTO8P.ZJpec3BhRx/agdtL5Dj1b4ulCkGC'),
+(4, 1742101599, 'mmk', '', 'wdasda', '2021-01-13', 3, '', 'ainkawaii2303@gmail.com', '$2y$10$N/raTToU4Mg1l7jlv.jFxO4F5IJMZQ/Wff5rVF.n3SB/X/Wy8yjH6'),
+(5, 2147483647, 'sdsdsad', '', 'sdsadsadsadsa', '2021-01-25', 3, '', 'de@gmail.com', '$2y$10$XuyEjZIQSUZBo2qwFVniFeoO1BFq3u2/EY8LW4XEmjuH.pi37ccC.');
 
 -- --------------------------------------------------------
 
@@ -289,7 +293,8 @@ INSERT INTO `softskill` (`id_softskill`, `mahasiswa`, `nm_kegiatan`, `id_jenis`,
 (30, 1, '', 36, 64, 111, '0000-00-00', NULL),
 (31, 2, 'The House', 34, 60, 107, '2020-12-09', NULL),
 (32, 1, 'pu', 31, 51, 99, '2021-01-29', NULL),
-(33, 1, 'mmm', 35, 62, 109, '2021-01-09', NULL);
+(33, 1, 'mmm', 35, 62, 109, '2021-01-09', NULL),
+(34, 4, 'Evodia Susanti Hondr', 9, 12, 179, '2021-01-11', NULL);
 
 -- --------------------------------------------------------
 
@@ -384,7 +389,9 @@ INSERT INTO `users` (`id_user`, `nama_user`, `email_user`, `password_user`, `rol
 (25, 'kakak', 'admin1@gmail.com', '$2y$10$p9QiBZhaBc/.H0m6NkhMMu9jLT2KWhiF.K9/Gq6lRQqM3PqiJ6KPe', 'mahasiswa', 0, 0, NULL),
 (26, 'vovo', 'evodiasusantinus@gmail.com', '$2y$10$cCKV7cciukPytz92wNOibecvw4F1P2Ha5Np8RPeQH0GoSWprkS.1K', 'mahasiswa', 0, 1, NULL),
 (27, 'Liefson Jacobus', 'liefson@ukrimuniversity.ac.id', '$2y$10$MEB1L7yxo9l5SECjlrWRXeyRZbeDhNKrvKwpGvWTQ/vqwN4ydRtV2', 'admin', 1, 1, NULL),
-(30, 'Sriyanti', 'sriyanti@student.ukrimuniversity.ac.id', '$2y$10$QegtJl2RwWkJmEyQANjIceVFDWIqXbTaZeD04RZFP/yQ7f.xAtl2y', 'mahasiswa', 1, 1, NULL);
+(30, 'Sriyanti', 'sriyanti@student.ukrimuniversity.ac.id', '$2y$10$QegtJl2RwWkJmEyQANjIceVFDWIqXbTaZeD04RZFP/yQ7f.xAtl2y', 'mahasiswa', 1, 1, NULL),
+(31, 'evodia', 'test@gmail.com', '$2y$10$zIYJTWwm63H2ri03SAh7pejWGE/UtOBTt9b83uxKqMRhEGT3oIzNC', 'mahasiswa', 0, 1, NULL),
+(32, 'er', 'er@gmail.com', '$2y$10$90GIceJnWAU2xAOU65A02.QPK4zYCeYJwYPuA/qLU3W5sFSJbll02', 'admin', 0, 1, 2);
 
 --
 -- Indexes for dumped tables
@@ -479,7 +486,7 @@ ALTER TABLE `jenis`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id_mahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_mahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `perolehan`
@@ -497,7 +504,7 @@ ALTER TABLE `semester`
 -- AUTO_INCREMENT for table `softskill`
 --
 ALTER TABLE `softskill`
-  MODIFY `id_softskill` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_softskill` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `tingkat`
@@ -509,7 +516,7 @@ ALTER TABLE `tingkat`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Constraints for dumped tables
