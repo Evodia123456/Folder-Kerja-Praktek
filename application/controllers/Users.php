@@ -10,7 +10,7 @@ class Users extends CI_Controller {
     }
 
     public function index() {
-        $listUser = $this->UserModel->joinMahasiswa();
+        $listUser = $this->UserModel->getAll();
         $data = array(
             "header" => "User",
             "page" => "content/user/v_list_user",

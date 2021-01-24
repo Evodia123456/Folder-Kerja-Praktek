@@ -4,12 +4,11 @@
 class TingkatModel extends CI_Model
 {
 	var $table = "tingkat";
-	var $primaryKey = "id";
+	var $primaryKey = "tingkat_id";
 
 	public function insert($data)
 	{
 		return $this->db->insert($this->table, $data);
-		
 	}
 
 	public function insertGetId($data)
@@ -17,8 +16,8 @@ class TingkatModel extends CI_Model
 		$this->db->insert($this->table, $data);
 		return $this->db->insert_id();
 	}
-	public function getAll(){
-		//$this->db->where
+	public function getAll()
+	{
 		return $this->db->get($this->table)->result();
 	}
 
@@ -44,5 +43,10 @@ class TingkatModel extends CI_Model
 	{
 		return $this->db->where(array("id_tingkat" => $id))->delete($this->table);
 	}
-
+	public function getTingkt()
+	{
+		$query = "select nama_tingkat, nama_jenis, tingkat_id
+		 from tingkat inner join jenis on tingkat.jenis_id = jenis.jenis_id";
+		return	$this->db->query($query)->result();
+	}
 }

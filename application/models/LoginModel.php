@@ -87,9 +87,9 @@ class LoginModel extends CI_Model
     }
     public function getLoginUser($username, $password)
     {
-        $query = $this->db->query("SELECT * from user where email = '$username'");
+        $query = $this->db->query("SELECT * from users where email_user = '$username'");
         $row = $query->row();
-        if (password_verify($password, $row->password)) {
+        if (password_verify($password, $row->password_user)) {
             return $query->row();
         } else {
             return false;

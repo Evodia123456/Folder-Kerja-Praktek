@@ -4,25 +4,27 @@
 	</div>
 	<div class="card-body">
 		<form id="form-tambah-tingkat" enctype="multipart/form-data" method="post" action="<?= site_url("tingkat/proses_simpan") ?>">
-		<div class="form-group">
+			<div class="form-group">
 				<label for="">Nama Tingkat</label>
-				<input required type="text"  name="namaTingkat" id="namaTingkat" class="form-control" />
-		</div>
-		<div class="form-group">
-				<label for="">Jenis Id</label>
-				<input required type="text"  name="jenisId" id="jenisId" class="form-control" />
-		</div>
-			
-			
-		</div>
-		</div>
+				<input required type="text" name="namaTingkat" id="namaTingkat" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label for="">Jenis</label>
+				<select name="jenisId" id="jenisId" class="form-control">
+					<option value="">Select Jenis</option>
+					<?php foreach ($jenis as $j) : ?>
+						<option value="<?= $j->jenis_id ?>"><?= $j->nama_jenis; ?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
 		</form>
 	</div>
-	<div class="card-footer">
-		<button id="btn-save-tingkat" type="button" class="btn btn-success">
-			<i class="fas fa-save"></i> Simpan
-		</button>
-	</div>
+</div>
+<div class="card-footer">
+	<button id="btn-save-tingkat" type="button" class="btn btn-success">
+		<i class="fas fa-save"></i> Simpan
+	</button>
+</div>
 </div>
 <script>
 	$(function() {

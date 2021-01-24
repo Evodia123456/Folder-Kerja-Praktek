@@ -8,22 +8,20 @@
 				<label for="">Nama Tingkat</label>
 				<input value="<?= $tingkatt->nama_tingkat ?>" required type="text" name="namaTingkat" id="" class="form-control" />
 			</div>
+
 			<div class="form-group">
-				<label for="">Jenis Id</label>
-				<input value="<?= $tingkatt->jenis_id ?>" required type="text" name="jenisId" id="" class="form-control" />
+				<label for="gambar">Jenis</label>
+				<select class="form-control" id="select-kategori" name="kategori_id" required value="">
+					<option value="" disabled selected>Pilih Kategori</option>
+					<?php
+					foreach ($jenis as $data) { ?>
+						<option value="<?= $data->jenis_id ?>" <?= $data->jenis_id == $tingkatt->jenis_id ? "selected" : '' ?>>
+							<?= $data->nama_jenis; ?></option>
+					<?php
+					} ?>
+				</select>
 			</div>
-			
-			
-			<div class="form-group">
-				<label for="gambar">Gambar Mahasiswa</label>
-				<div class="input-group">
-					<div class="custom-file">
-						<input type="file" name="gambar" class="custom-file-input" id="gambar">
-						<label class="custom-file-label" for="gambar">Choose file</label>
-					</div>
-				</div>
-			</div>
-			<input type="hidden" name="id" value="<?= $tingkatt->id ?>" />
+			<input type="hidden" name="id" value="<?= $tingkatt->tingkat_id ?>" />
 		</form>
 	</div>
 	<div class="card-footer">

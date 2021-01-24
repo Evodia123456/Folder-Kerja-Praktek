@@ -10,17 +10,16 @@ class Softskill extends CI_Controller
 		$this->load->model("SoftskillModel");
 		$this->load->model("JenisModel");
 		$this->load->model("TingkatModel");
-
 	}
 
 	public function index()
 	{
 		//1. Ambil data dari model
-//		$softskillList = $this->SoftskillModel->getAll();
+		//		$softskillList = $this->SoftskillModel->getAll();
 		$nimSession = $this->session->userdata('nim');
 		$idSession = $this->session->userdata('idMhs');
 		$softskillList = $this->SoftskillModel->getSoftskil($nimSession, $idSession);
-//		$softskillList = $this->SoftskillModel->joinTabel($nimSession, $idSession);
+		//		$softskillList = $this->SoftskillModel->joinTabel($nimSession, $idSession);
 		//2. Kirimkan data ke view
 		$data = array(
 			"softskillList" => $softskillList,
@@ -51,13 +50,13 @@ class Softskill extends CI_Controller
 
 	public function proses_simpan()
 	{
-//		$softskill = array(
-//			$gambar = $this->input->post("gambar", true),
-//			$nm_kegiatan = $this->input->post("nm_kegiatan", true),
-//			$tgl_kegiatan = $this->input->post("tgl_kegiatan", true),
-//			$kat_kegiatan = $this->input->post("kat_kegiatan", true),
-//			$poin_kegiatan = $this->input->post("poin_kegiatan", true),
-//		);
+		//		$softskill = array(
+		//			$gambar = $this->input->post("gambar", true),
+		//			$nm_kegiatan = $this->input->post("nm_kegiatan", true),
+		//			$tgl_kegiatan = $this->input->post("tgl_kegiatan", true),
+		//			$kat_kegiatan = $this->input->post("kat_kegiatan", true),
+		//			$poin_kegiatan = $this->input->post("poin_kegiatan", true),
+		//		);
 
 		$softskill = array(
 			$jenis = $this->input->post('jenis'),
@@ -68,7 +67,7 @@ class Softskill extends CI_Controller
 			$tanggal = $this->input->post('tanggal'),
 			$gambar = $this->input->post("gambar", true),
 		);
-//		$id = $this->SoftskillModel->insertGetId($softskill);
+		//		$id = $this->SoftskillModel->insertGetId($softskill);
 		$id = $this->SoftskillModel->insertData($softskill);
 		if ($id > 0) {
 			$uploadGambar = $this->uploadGambar("gambar");
@@ -95,33 +94,6 @@ class Softskill extends CI_Controller
 		);
 		return $this->load->view("layoutuser/mainuser", $data);
 	}
-
-//	public function prosesTambah()
-//	{
-//
-//		$id_softskill = $this->input->post("id_softskill", true);
-//		$nm_kegiatan = $this->input->post("nm_kegiatan", true);
-//		$tgl_kegiatan = $this->input->post("tgl_kegiatan", true);
-//		$kat_kegiatan = $this->input->post("kat_kegiatan", true);
-//		$poin_kegiatan = $this->input->post("poin_kegiatan", true);
-//		$gambar = $this->input->post("gambar", true);
-//		$prestasi = $this->input->post();
-//		if ($prestasi == "juara 1") {
-//
-//		}
-//
-//		$softskill = array(
-//			"id_softskill" => $id_softskill,
-//			"nm_kegiatan" => $nm_kegiatan,
-//			"tgl_kegiatan" => $tgl_kegiatan,
-//			"kat_kegiatan" => $kat_kegiatan,
-//			"poin_kegiatan" => $poin_kegiatan,
-//			"gambar" => $gambar
-//		);
-//		$this->SoftskillModel->insertData($softskill);
-//		redirect("softskill");
-//	}
-
 	public function prosesTambah()
 	{
 		$jenis = $this->input->post('jenis');
@@ -129,7 +101,7 @@ class Softskill extends CI_Controller
 		$perolehan = $this->input->post('perolehan');
 		$nama_kegiatan = $this->input->post('nama');
 		$tanggal = $this->input->post('tanggal');
-//		$gambar = $this->input->post("gambar", true);
+		$gambar = $this->input->post("gambar", true);
 		$softskill = array(
 			"id_jenis" => $jenis,
 			"tingkat" => $tingkat,
@@ -175,7 +147,7 @@ class Softskill extends CI_Controller
 			"tgl_kegiatan" => $tgl_kegiatan,
 			"kat_kegiatan" => $kat_kegiatan,
 			"poin_kegiatan" => $poin_kegiatan,
-			"gambar" => $gambar
+			"gambar" => $this->uploadGambar($gambar)
 		);
 		$this->SoftskillModel->updateData($id_softskill, $softskill);
 		redirect("softskill");
@@ -208,4 +180,22 @@ class Softskill extends CI_Controller
 		$this->load->view('layoutuser/mainuser', $data);
 	}
 
+	public function uploadGambar($field)
+	{
+		$config = array(
+			"upload_path" => "upload/images/",
+			"allowed_types" => "jpg|jpeg|png",
+			"max_size" => "5000",
+			"remove_space" => true,
+			"encrypt_name" => true
+		);
+		$this->load->library("upload", $config);
+		if ($this->upload->do_upload($field)) {
+			$result = array("result" => "success", "file" => $this->upload->data(), "error" => "");
+			return $result;
+		} else {
+			$result = array("result" => "failed", "file" => "", "error" => $this->upload->display_errors());
+			return $result;
+		}
+	}
 }

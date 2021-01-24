@@ -61,8 +61,8 @@ class Login extends CI_Controller
         $email = trim($this->input->post('email_user'));
         $password = $this->input->post('password_user');
         $dosen = $this->LoginModel->getLoginUser($email, $password);
-        $query = $this->LoginModel->getLogin($email, $password);
-        if ($query == null) {
+        $query = $this->LoginModel->getLoginMhs($email, $password);
+        if ($query == null && $dosen == null) {
             $message = array(
                 'header' => 'Gagal Masuk!',
                 'message' => 'Mohon Masukan Email dan Password yang Tepat',
@@ -71,21 +71,21 @@ class Login extends CI_Controller
             $this->session->set_flashdata('message', $message);
             redirect('login');
         } else {
-            if ($dosen) {
+            if ($query !== false) {
                 $dataSession = array(
                     "idMhs" => $query->id_mahasiswa,
                     "nim" => $query->nim,
                     "nama" => $query->nama,
-                    "email" => $query->email_user,
+                    "email" => $query->email,
                     "jk" => $query->jk,
-                    "is_login_pwl" => true,
+                    "is_login_pwl" => true
                 );
-            } elseif ($query) {
+            } else if ($dosen !== false) {
                 $dataSession = array(
-                    "id" => $query->id_user,
-                    "nama" => $query->nama_user,
-                    "email" => $query->email_user,
-                    "role" => $query->role_user,
+                    "id" => $dosen->id_user,
+                    "nama" => $dosen->nama_user,
+                    "email" => $dosen->email_user,
+                    "role" => $dosen->role_user,
                     "is_login_pwl" => true,
                 );
             }
@@ -94,41 +94,41 @@ class Login extends CI_Controller
         }
     }
 
-//     public function verify() {
-//         $email = trim($this->input->post('email_user'));
-//         $password = $this->input->post('password_user');
-//         $query = $this->LoginModel->check($email, $password);
-// //        var_dump($query);
-// //        die();
-//         if (!$query) {
-//             $message = array(
-//                 'header' => 'Gagal Masuk!',
-//                 'message' => 'Mohon Masukan Email dan Password yang Tepat',
-//                 'color' => 'warning'
-//             );
-//             $this->session->set_flashdata('message', $message);
-//             redirect('login');
-//         } else {
-//             $userData = array(
-//                 "id_user_pwl" => $query->id_user,
-//                 "nama_user_pwl" => $query->nama_user,
-//                 "role_user_pwl" => $query->role_user,
-//                 "is_login_pwl" => true
-//             );
-//             $this->session->set_userdata($userData);
-//             if ($this->session->userdata("role_user_pwl") === 'admin') {
-//                 redirect('dashboard');
-//             } else if ($this->session->userdata("role_user_pwl") === 'mahasiswa') {
-//                 redirect('Dashboard2');
-// //            } else if ($this->session->userdata("role_user") === 'mahasiswas') {
-// //                redirect('dashboard');
-// //            } else if ($this->session->userdata("role_user") === '4') {
-// //                redirect('mahasiswa');
-//             } else {
-//                 redirect('a');
-//             }
-//         }
-//     }
+    //     public function verify() {
+    //         $email = trim($this->input->post('email_user'));
+    //         $password = $this->input->post('password_user');
+    //         $query = $this->LoginModel->check($email, $password);
+    // //        var_dump($query);
+    // //        die();
+    //         if (!$query) {
+    //             $message = array(
+    //                 'header' => 'Gagal Masuk!',
+    //                 'message' => 'Mohon Masukan Email dan Password yang Tepat',
+    //                 'color' => 'warning'
+    //             );
+    //             $this->session->set_flashdata('message', $message);
+    //             redirect('login');
+    //         } else {
+    //             $userData = array(
+    //                 "id_user_pwl" => $query->id_user,
+    //                 "nama_user_pwl" => $query->nama_user,
+    //                 "role_user_pwl" => $query->role_user,
+    //                 "is_login_pwl" => true
+    //             );
+    //             $this->session->set_userdata($userData);
+    //             if ($this->session->userdata("role_user_pwl") === 'admin') {
+    //                 redirect('dashboard');
+    //             } else if ($this->session->userdata("role_user_pwl") === 'mahasiswa') {
+    //                 redirect('Dashboard2');
+    // //            } else if ($this->session->userdata("role_user") === 'mahasiswas') {
+    // //                redirect('dashboard');
+    // //            } else if ($this->session->userdata("role_user") === '4') {
+    // //                redirect('mahasiswa');
+    //             } else {
+    //                 redirect('a');
+    //             }
+    //         }
+    //     }
 
     // public function cekLogin() {
     //     $email = $this->input->post("email_user");
@@ -159,37 +159,37 @@ class Login extends CI_Controller
     //     }
     // }
 
-// public function cekLogin(){
-//     $email = $this->input->post('email');
-//     $password = $this->input->post("password");
-//     $this->load->model("LoginModel");
-//     $user = $this->LoginModel->cekUser($email, $password);
-//     if(!$user){
-//         redirect("login");
-//     }else{
-//         if ($user->is_active == "0") {
-//             redirect("login");
-//         }
-//         //
-//         if ($user->first_login == "1") {
-//             $this->session->set_userdata(array("user_id_kip" => $user->user_id));
-//             redirect("login/firstLogin");
-//         }
-//     $dataSession = array(
-//     "user_id_kip"   => $user->user_id,
-//     "nama_user_kip" => $user->nama_user,
-//     "role_user_kip" =>$user->role_user,
-//     "is_login_kip"  =>true
-// );
-//     $this->session->set_userdata($dataSession);
-//     redirect("dashboard");
-//     // if($this->session->userdata("role_user") === "mahasiswa"){
-//     //     redirect("prestasi");
-//     // }else if($this->session->userdata("role_user") === "admin"){
-//     // redirect("dashboard");
-//     // }
-//     }
-// }
+    // public function cekLogin(){
+    //     $email = $this->input->post('email');
+    //     $password = $this->input->post("password");
+    //     $this->load->model("LoginModel");
+    //     $user = $this->LoginModel->cekUser($email, $password);
+    //     if(!$user){
+    //         redirect("login");
+    //     }else{
+    //         if ($user->is_active == "0") {
+    //             redirect("login");
+    //         }
+    //         //
+    //         if ($user->first_login == "1") {
+    //             $this->session->set_userdata(array("user_id_kip" => $user->user_id));
+    //             redirect("login/firstLogin");
+    //         }
+    //     $dataSession = array(
+    //     "user_id_kip"   => $user->user_id,
+    //     "nama_user_kip" => $user->nama_user,
+    //     "role_user_kip" =>$user->role_user,
+    //     "is_login_kip"  =>true
+    // );
+    //     $this->session->set_userdata($dataSession);
+    //     redirect("dashboard");
+    //     // if($this->session->userdata("role_user") === "mahasiswa"){
+    //     //     redirect("prestasi");
+    //     // }else if($this->session->userdata("role_user") === "admin"){
+    //     // redirect("dashboard");
+    //     // }
+    //     }
+    // }
 
     public function firstLogin()
     {
@@ -228,5 +228,4 @@ class Login extends CI_Controller
         $this->session->sess_destroy();
         redirect('login');
     }
-
 }

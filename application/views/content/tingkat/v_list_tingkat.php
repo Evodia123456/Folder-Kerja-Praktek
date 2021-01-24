@@ -20,7 +20,7 @@
 					<tr>
 						<td><?= $no++ ?></td>
 						<td><?= $row->nama_tingkat ?></td>				
-						<td><?= $row->jenis_id ?></td>				
+						<td><?= $row->nama_jenis ?></td>				
 						<td>
 							<a href="<?= site_url("tingkat/update/$row->tingkat_id") ?>" class="btn btn-sm btn-warning">
 								<i class="fas fa-edit"></i>
