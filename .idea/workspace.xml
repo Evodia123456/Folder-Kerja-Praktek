@@ -2,10 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ad52f98-1604-4f80-a129-09ee490a9d90" name="Default Changelist" comment="adding login">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_01_2021_3_53_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_01_2021_3_53__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Jenis.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Jenis.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/layout/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layout/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Mahasiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Mahasiswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/MahasiswaUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/MahasiswaUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Perolehan.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Perolehan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Prestasi.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Softskill.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Softskill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Tingkat.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Tingkat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/helpers/fungsi_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/fungsi_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/helpers/utils_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/utils_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/libraries/Fungsi.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/libraries/Fungsi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/JenisModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/JenisModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/LoginModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/LoginModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/MahasiswaModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/MahasiswaModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/PerolehanModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/PerolehanModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/SoftskillModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/SoftskillModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/TingkatModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/TingkatModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/jenis/v_form_jenis.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/jenis/v_form_jenis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/jenis/v_list_jenis.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/jenis/v_list_jenis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/jenis/v_update_jenis.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/jenis/v_update_jenis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/mahasiswa/v_form_mahasiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/mahasiswa/v_form_mahasiswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/mahasiswa/v_list_mahasiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/mahasiswa/v_list_mahasiswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/mahasiswa/v_update_mahasiswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/mahasiswa/v_update_mahasiswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/perolehan/v_form_perolehan.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/perolehan/v_form_perolehan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/perolehan/v_list_perolehan.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/perolehan/v_list_perolehan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/perolehan/v_update_perolehan.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/perolehan/v_update_perolehan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/softskill/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/softskill/list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/softskill/v_detail_softskill.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/softskill/v_detail_softskill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/softskill/v_form_tambah.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/softskill/v_form_tambah.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/softskill/v_form_ubah.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/softskill/v_form_ubah.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/softskill/v_list_transaksi.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/softskill/v_list_transaksi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/tingkat/v_form_tingkat.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/tingkat/v_form_tingkat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/tingkat/v_list_tingkat.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/tingkat/v_list_tingkat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/tingkat/v_update_tingkat.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/tingkat/v_update_tingkat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/content/user/v_list_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/content/user/v_list_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/contentuser/mahasiswauser/v_list_mahasiswauser.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/contentuser/mahasiswauser/v_list_mahasiswauser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/contentuser/mahasiswauser/v_update_mahasiswauser.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/contentuser/mahasiswauser/v_update_mahasiswauser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/layoutuser/mainuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layoutuser/mainuser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/welcome_message.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/welcome_message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/cobakip (8).sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +80,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -49,6 +95,7 @@
       <workItem from="1611429221523" duration="1778000" />
       <workItem from="1611431049305" duration="1775000" />
       <workItem from="1611432882383" duration="1720000" />
+      <workItem from="1621970858299" duration="587000" />
     </task>
     <task id="LOCAL-00001" summary="update admin and adding form mahasiswa">
       <created>1611434403115</created>
@@ -64,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611434510424</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add db">
+      <created>1611436144229</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611436144229</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,6 +138,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update admin and adding form mahasiswa" />
-    <option name="LAST_COMMIT_MESSAGE" value="update admin and adding form mahasiswa" />
+    <MESSAGE value="add db" />
+    <option name="LAST_COMMIT_MESSAGE" value="add db" />
   </component>
 </project>

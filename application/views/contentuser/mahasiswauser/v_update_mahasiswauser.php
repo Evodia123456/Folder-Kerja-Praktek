@@ -6,11 +6,11 @@
 		<form id="form-update-mhs" enctype="multipart/form-data" method="post" action="<?= site_url("mahasiswauser/proses_update") ?>">
 			<div class="form-group">
 				<label for="">NIM mahasiswa</label>
-				<input value="<?= $mhs->nim ?>" required type="text"  name="nim" id="" class="form-control" />
+				<input value="<?= $mhs->nim ?>" required type="text"  name="nim" id="nim" class="form-control" />
 			</div>
 			<div class="form-group">
 				<label for="">Nama Mahasiswa</label>
-				<input value="<?= $mhs->nama ?>" required type="text"  name="nama" id="" class="form-control" />
+				<input value="<?= $mhs->nama ?>" required type="text"  name="nama" id="nama" class="form-control" />
 			</div>
 			<div class="form-group">
 				<label for="">Jenis Kelamin</label>

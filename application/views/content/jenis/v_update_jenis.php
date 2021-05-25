@@ -10,15 +10,7 @@
 			</div>
 			
 			
-			<div class="form-group">
-				<label for="gambar">Gambar Mahasiswa</label>
-				<div class="input-group">
-					<div class="custom-file">
-						<input type="file" name="gambar" class="custom-file-input" id="gambar">
-						<label class="custom-file-label" for="gambar">Choose file</label>
-					</div>
-				</div>
-			</div>
+			
 			<input type="hidden" name="id" value="<?= $jeniss->jenis_id ?>" />
 		</form>
 	</div>

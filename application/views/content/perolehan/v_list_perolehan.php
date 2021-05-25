@@ -1,51 +1,47 @@
 <div class="card">
+	<div class="card-footer">
+		<a href="<?=site_url("perolehan/tambah")?>" class="btn btn-primary">
+			<i class="fas fa-plus"></i> Tambah perolehan
+		</a>
+
+	</div>
 	<div class="card-header">
 		<h4>Daftar perolehan</h4>
 	</div>
 	<div class="card-body">
-		<table class="table">
+		<table class="table" id="myTable">
 			<thead>
 				<tr>
 					<th>No</th>
 					<th>Nama Perolehan</th>
+					<th>Nama Tingkat</th>
 					<th>Poin</th>
-					<th>Tingkat Id</th>
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php
-				$no = 1;
-				foreach ($perolehans as $row) {
-				?>
+$no = 1;
+foreach ($perolehans as $row) {
+    ?>
 					<tr>
-						<td><?= $no++ ?></td>
-						<td><?= $row->nama_perolehan ?></td>
-						<td><?= $row->poin ?></td>
-						<td><?= $row->tingkat_id ?></td>
-						
-						<!-- <td>
-							<img height="70" onerror="this.onerror=null;this.src='<?= base_url() . 'assets/images/no-image.png' ?>';" src="<?= base_url() . "upload/images/" . $row->gambar ?>" alt="Gambar" /> -->
-
+						<td><?=$no++?></td>
+						<td><?=$row->nama_perolehan?></td>
+						<td><?=$row->nama_tingkat?></td>
+						<td><?=$row->poin?></td>
 						</td>
 						<td>
-							<a href="<?= site_url("perolehan/update/$row->id_perolehan") ?>" class="btn btn-sm btn-warning">
+							<a href="<?=site_url("perolehan/update/$row->id_perolehan")?>" class="btn btn-sm btn-warning">
 								<i class="fas fa-edit"></i>
 							</a>
-							<a href="No" data-id="<?= $row->id_perolehan ?>" class="btn btn-sm btn-danger btn-delete-perolehans"><i class="fas fa-trash"></i></a>
+							<a href="#" data-id="<?=$row->id_perolehan?>" class="btn btn-sm btn-danger btn-delete-perolehans"><i class="fas fa-trash"></i></a>
 						</td>
 					</tr>
 				<?php
-				}
-				?>
+}
+?>
 			</tbody>
 		</table>
-	</div>
-	<div class="card-footer">
-		<a href="<?= site_url("perolehan/tambah") ?>" class="btn btn-primary">
-			<i class="fas fa-plus"></i> Tambah perolehan
-		</a>
-		
 	</div>
 </div>
 
@@ -62,7 +58,7 @@
 		</div>
 	</div>
 </div>
-<form id="form-delete" method="post" action="<?= site_url('perolehan/proses_hapus') ?>">
+<form id="form-delete" method="post" action="<?=site_url('perolehan/proses_hapus')?>">
 
 </form>
 <script>
@@ -77,7 +73,7 @@
 			//panggil url untuk hapus data
 			let inputId = $("<input>")
 				.attr("type", "hidden")
-				.attr("name", "u")
+				.attr("name", "id")
 				.val(idperolehans);
 			let formDelete = $("#form-delete");
 			formDelete.empty().append(inputId);

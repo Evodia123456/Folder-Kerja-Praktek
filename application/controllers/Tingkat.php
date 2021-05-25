@@ -4,10 +4,10 @@ class Tingkat extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		// check_admin();
+		check_admin();
 		$this->load->model("TingkatModel");
 		$this->load->model("JenisModel");
-		// isLogin();
+		isLogin();
 	}
 
 	public function index()
@@ -50,8 +50,9 @@ class Tingkat extends CI_Controller
 		$data = array(
 			"header" => "tingkat",
 			"page" => "content/tingkat/v_update_tingkat",
-			"tingkatt" => $tingkat,
-			"jenis" => $jenis
+			"jenis" => $this->JenisModel->getAll(),
+			"tingkatt" => $tingkat
+			
 		);
 		$this->load->view("layoutuser/mainuser", $data);
 	}
@@ -74,22 +75,5 @@ class Tingkat extends CI_Controller
 		redirect("tingkat");
 	}
 
-	public function uploadGambar($field)
-	{
-		$config = array(
-			"upload_path" => "upload/images/",
-			"allowed_types" => "jpg|jpeg|png",
-			"max_size" => "5000",
-			"remove_space" => true,
-			"encrypt_name" => true
-		);
-		$this->load->library("upload", $config);
-		if ($this->upload->do_upload($field)) {
-			$result = array("result" => "success", "file" => $this->upload->data(), "error" => "");
-			return $result;
-		} else {
-			$result = array("result" => "failed", "file" => "", "error" => $this->upload->display_errors());
-			return $result;
-		}
-	}
+	
 }

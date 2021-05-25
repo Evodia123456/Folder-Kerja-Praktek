@@ -5,10 +5,10 @@ class Mahasiswa extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // check_admin();
+        check_admin();
         $this->load->model("MahasiswaModel");
         $this->load->library('form_validation');
-        //  isLogin();
+        isLogin();
     }
 
     public function index()
@@ -18,7 +18,7 @@ class Mahasiswa extends CI_Controller
             "header" => "Mahasiswa",
             "judul" => "Data Mahasiswa",
             "page" => "content/mahasiswa/v_list_mahasiswa",
-            "mhs" => $listmahasiswa
+            "mhs" => $listmahasiswa,
         );
         $this->load->view("layoutuser/mainuser", $data);
     }
@@ -39,25 +39,12 @@ class Mahasiswa extends CI_Controller
         redirect('mahasiswa');
     }
 
-
     public function tambah()
     {
-
-        $Mahasiswa = new stdClass();
-        $Mahasiswa->id = null;
-        $Mahasiswa->nim = null;
-        $Mahasiswa->nama = null;
-        $Mahasiswa->jk = null;
-        $Mahasiswa->alamat = null;
-        $Mahasiswa->tgl_lahir = null;
-        $Mahasiswa->ipk = null;
-        $Mahasiswa->gambar = null;
-
         $data = array(
             "header" => "Mahasiswa",
             "judul" => "Tambah Mahasiswa",
             "page" => "content/mahasiswa/v_form_mahasiswa",
-            "mhs" => $Mahasiswa
         );
         $this->load->view("layoutuser/mainuser", $data);
     }
@@ -70,7 +57,6 @@ class Mahasiswa extends CI_Controller
             "jk" => $this->input->post("jk"),
             "alamat" => $this->input->post("alamat"),
             "tgl_lahir" => $this->input->post("tgl_lahir"),
-            "id_ipk" => $this->input->post("ipk"),
             "email" => $this->input->post("email"),
             "password" => password_hash($this->input->post("password"), PASSWORD_DEFAULT),
         );
@@ -85,20 +71,22 @@ class Mahasiswa extends CI_Controller
                 $this->MahasiswaModel->update($id, $dataUpdate);
             }
         }
-        redirect("mahasiswa");
+        echo "<script>
+        alert('Data berhasil ditambah');
+        window.location='" . base_url('mahasiswa') . "';
+        </script>";
+
     }
 
     public function update($idmahasiswa)
     {
         $mahasiswa = $this->MahasiswaModel->getByPrimaryKey($idmahasiswa);
-        if ($mahasiswa->num_rows() > 0) {
-            $Mahasiswa = $mahasiswa->row();
-
+        if ($mahasiswa) {
             $data = array(
                 "header" => "Mahasiswa",
                 "judul" => "Ubah Data Mahasiswa",
                 "page" => "content/mahasiswa/v_update_mahasiswa",
-                "mhs" => $mahasiswa
+                "mhs" => $mahasiswa,
             );
             $this->load->view("layoutuser/mainuser", $data);
         } else {
@@ -111,47 +99,39 @@ class Mahasiswa extends CI_Controller
 
     public function proses_update()
     {
+        $id = $this->input->post("id");
+        $mahasiswa = array(
+            "nim" => $this->input->post("nim"),
+            "nama" => $this->input->post("nama"),
+            "jk" => $this->input->post("jk"),
+            "alamat" => $this->input->post("alamat"),
+            "tgl_lahir" => $this->input->post("tgl_lahir"),
+            "email" => $this->input->post("email"),
+            "password" => password_hash($this->input->post("password"), PASSWORD_DEFAULT),
+        );
+        $this->MahasiswaModel->update($id, $mahasiswa);
+        echo "<script>
+				alert('Data berhasil diupdate');
+				window.location='" . base_url('mahasiswa') . "';
+				</script>";
 
-        $post = $this->input->post(null, true);
-        if (isset($_POST['Tambah'])) {
-            $this->MahasiswaModel->insert($post);
-        }
-        if ($this->db->affected_rows() > 0) {
-            $this->session->set_flashdata('succes', 'berhasil ditambahkan');
-            redirect('mahasiswa');
-        } else if (isset($_POST['Update'])) {
-            $this->MahasiswaModel->update($post);
-        }
-
-        if ($this->db->affected_rows() > 0) {
-            $this->session->set_flashdata('succes', 'berhasil diupdate');
-            redirect('mahasiswa');
-        }
     }
 
-
-
-
-    // 	$id = $this->input->post("id");
-    // 	$mahasiswa = array(
-    // 		"nim" => $this->input->post("nim"),
-    // 		"nama" => $this->input->post("nama"),
-    // 		"jk" => $this->input->post("jk"),
-    // 		"alamat" => $this->input->post("alamat"),
-    // 		"tgl_lahir" => $this->input->post("tgl"),
-    // 		"ipk" => $this->input->post("ipk"),
-    // 	);
-    // 	$this->MahasiswaModel->update($id, $mahasiswa);
-    // 	redirect("mahasiswa");
-    // }
-
-    // public function proses_hapus()
-    // {
-    // 	$id = $this->input->post("id");
-    // 	$this->MahasiswaModel->delete($id);
-    // 	redirect("mahasiswa");
-    // }
-
+    public function proses_hapus()
+    {
+        $id = $this->input->post("id");
+        if ($this->MahasiswaModel->delete($id)) {
+            echo "<script>
+        alert('Data berhasil dihapus');
+        window.location='" . base_url('mahasiswa') . "';
+        </script>";
+        } else {
+            echo "<script>
+        alert('Data gagak dihapus');
+        window.location='" . base_url('mahasiswa') . "';
+        </script>";
+        }
+    }
 
     public function uploadGambar($field)
     {
@@ -160,7 +140,7 @@ class Mahasiswa extends CI_Controller
             "allowed_types" => "jpg|jpeg|png",
             "max_size" => "5000",
             "remove_space" => true,
-            "encrypt_name" => true
+            "encrypt_name" => true,
         );
         $this->load->library("upload", $config);
         if ($this->upload->do_upload($field)) {

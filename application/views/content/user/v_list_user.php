@@ -16,26 +16,26 @@
 				<!-- //readonly> -->
 			</div>
 		</div>
-
+<!-- 
 		<div class="form-group row">
 			<label for="inputName2" class="col-sm-2 col-form-label">Password</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" id="inputName2" placeholder="<?= $this->session->userdata('password_user'); ?>" readonly>
 			</div>
-		</div>
+		</div> -->
 
-		<div class="form-group row">
+		<!-- <div class="form-group row">
 			<div class="offset-sm-2 col-sm-10">
 				<button type="submit" class="btn btn-info">Reset Password</button>
 			</div>
-		</div>
+		</div> -->
 	</form>
-	<!-- <div class="card-footer">
+	<div class="card-footer">
 		<a href="<?= site_url("users/add") ?>" class="btn btn-primary">
 			<i class="fas fa-plus"></i> Tambah
 		</a>
 		
-	</div> -->
+	</div>
 </div>
 
 <div class="modal fade" id="modal-confirm-delete">

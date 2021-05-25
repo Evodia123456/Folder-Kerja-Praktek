@@ -6,13 +6,6 @@
 		<form id="form-tambah-jenis" enctype="multipart/form-data" method="post" action="<?= site_url("jenis/proses_simpan") ?>">
 		<div class="form-group">
 				<label for="">Nama Jenis</label>
-				<!-- <select class="form-control" id="jenisPerolehan" name="jenisperolehan">
-					<option value="" disabled selected>Perolehan Jabatan</option>
-					<option value="Ketua">Ketua Umum/Ketua</option>
-					<option value="Wakil Ketua">Wakil Ketua Umum/Wakil Ketua</option>
-					<option value="Sekretaris/Bendahara">Sekretaris/Bendahara</option>
-					<option value="Anggota">Anggota</option>
-				</select> -->
 				<input required type="text"  name="namaJenis" id="namaJenis" class="form-control" />
 			</div>
 			

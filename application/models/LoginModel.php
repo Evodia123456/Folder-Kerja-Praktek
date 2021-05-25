@@ -2,12 +2,14 @@
 
 class LoginModel extends CI_Model
 {
+    public $table = "users";
+    public $primaryKey = "id_user";
 
     public function cekUser($email, $password)
     {
         $syarat = array(
             "email_user" => $email,
-//			"password" => $password
+//            "password" => $password
         );
         $this->db->where($syarat);
         $user = $this->db->get("users")->row();
@@ -45,11 +47,15 @@ class LoginModel extends CI_Model
             $query = $this->db->get('mahasiswa')->row();
 
         }
-        if (!$query)
+        if (!$query) {
             return false;
+        }
+
         $hash = $query->password_user;
-        if (!password_verify($password, $hash))
+        if (!password_verify($password, $hash)) {
             return false;
+        }
+
         return $query;
     }
 
@@ -94,6 +100,12 @@ class LoginModel extends CI_Model
         } else {
             return false;
         }
+    }
+
+    public function getByPrimaryKey($id)
+    {
+        $this->db->where($this->primaryKey, $id);
+        return $this->db->get($this->table)->row();
     }
 
 }

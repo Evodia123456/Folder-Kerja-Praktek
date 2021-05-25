@@ -36,7 +36,6 @@ class JenisModel extends CI_Model
 		return $this->db->update($this->table, $data);
 	}
 
-
 	public function delete($id)
 	{
 		return $this->db->where(array("jenis_id" => $id))->delete($this->table);

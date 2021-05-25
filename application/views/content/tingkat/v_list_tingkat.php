@@ -1,4 +1,10 @@
 <div class="card">
+<div class="card-footer">
+		<a href="<?= site_url("tingkat/tambah") ?>" class="btn btn-primary">
+			<i class="fas fa-plus"></i> Tambah Tingkat
+		</a>
+		
+	</div>
 	<div class="card-header">
 		<h4>Daftar Tingkat</h4>
 	</div>
@@ -7,8 +13,8 @@
 			<thead>
 				<tr>
 					<th>No</th>
-					<th>Nama Tingkat</th>
-					<th>Tingkat Id</th>
+					<th>Jenis Kegiatan</th>
+					<th>Tingkat Kegiatan</th>
 					<th>Action</th>
 			</tr>
 			</thead>
@@ -19,8 +25,8 @@
 				?>
 					<tr>
 						<td><?= $no++ ?></td>
-						<td><?= $row->nama_tingkat ?></td>				
 						<td><?= $row->nama_jenis ?></td>				
+						<td><?= $row->nama_tingkat ?></td>				
 						<td>
 							<a href="<?= site_url("tingkat/update/$row->tingkat_id") ?>" class="btn btn-sm btn-warning">
 								<i class="fas fa-edit"></i>
@@ -34,12 +40,7 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="card-footer">
-		<a href="<?= site_url("tingkat/tambah") ?>" class="btn btn-primary">
-			<i class="fas fa-plus"></i> Tambah
-		</a>
-		
-	</div>
+	
 </div>
 
 <div class="modal fade" id="modal-confirm-delete">

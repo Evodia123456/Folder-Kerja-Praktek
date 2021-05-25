@@ -2,6 +2,12 @@
 	<div class="card-header">
 		<h4>Daftar Jenis</h4>
 	</div>
+	<div class="card-footer">
+		<a href="<?= site_url("jenis/tambah") ?>" class="btn btn-primary">
+			<i class="fas fsa-plus"></i> Tambah
+		</a>
+		
+	</div>
 	<div class="card-body">
 		<table class="table">
 			<thead>
@@ -31,12 +37,6 @@
 				?>
 			</tbody>
 		</table>
-	</div>
-	<div class="card-footer">
-		<a href="<?= site_url("jenis/tambah") ?>" class="btn btn-primary">
-			<i class="fas fa-plus"></i> Tambah
-		</a>
-		
 	</div>
 </div>
 

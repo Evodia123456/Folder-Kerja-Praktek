@@ -1,18 +1,13 @@
 <div class="card">
 	<div class="card-header">
-		<h4>Update Tingkat</h4>
+		<h4>Update Data Tingkat</h4>
 	</div>
 	<div class="card-body">
 		<form id="form-update" enctype="multipart/form-data" method="post" action="<?= site_url("tingkat/proses_update") ?>">
-			<div class="form-group">
-				<label for="">Nama Tingkat</label>
-				<input value="<?= $tingkatt->nama_tingkat ?>" required type="text" name="namaTingkat" id="" class="form-control" />
-			</div>
-
-			<div class="form-group">
-				<label for="gambar">Jenis</label>
-				<select class="form-control" id="select-kategori" name="kategori_id" required value="">
-					<option value="" disabled selected>Pilih Kategori</option>
+		<div class="form-group">
+				<label for="gambar">Jenis Kegiatan</label>
+				<select class="form-control" id="select-kategori" name="jenisId" required value="">
+					<option value="" disabled selected>Pilih Jenis Kgeiatan</option>
 					<?php
 					foreach ($jenis as $data) { ?>
 						<option value="<?= $data->jenis_id ?>" <?= $data->jenis_id == $tingkatt->jenis_id ? "selected" : '' ?>>
@@ -20,7 +15,14 @@
 					<?php
 					} ?>
 				</select>
+		</div>
+
+			<div class="form-group">
+				<label for="gambar">Tingkat Kegiatan</label>
+				<input value="<?= $tingkatt->nama_tingkat ?>" required type="text" name="namaTingkat" id="" class="form-control" />
 			</div>
+
+			
 			<input type="hidden" name="id" value="<?= $tingkatt->tingkat_id ?>" />
 		</form>
 	</div>

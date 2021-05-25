@@ -19,9 +19,10 @@ class PerolehanModel extends CI_Model
 
 	public function getAll()
 	{
-		//hanya mengembalikan data yang is_active = 1
-		// $this->db->where("is_active", 1);
-		return $this->db->get($this->table)->result();
+		$sql = "select p.id_perolehan,p.nama_perolehan,p.poin, t.nama_tingkat
+				from perolehan p inner join tingkat t
+				on p.tingkat_id = t.tingkat_id";
+		return $this->db->query($sql)->result();
 	}
 
 	public function getByPrimaryKey($id)
@@ -35,7 +36,6 @@ class PerolehanModel extends CI_Model
 		$this->db->where($this->primaryKey, $id);
 		return $this->db->update($this->table, $data);
 	}
-
 
 	public function delete($id){
 		return $this->db->where(array("id_perolehan" => $id))->delete($this->table);

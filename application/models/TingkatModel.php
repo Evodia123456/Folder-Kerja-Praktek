@@ -41,7 +41,7 @@ class TingkatModel extends CI_Model
 
 	public function delete($id)
 	{
-		return $this->db->where(array("id_tingkat" => $id))->delete($this->table);
+		return $this->db->where(array("tingkat_id" => $id))->delete($this->table);
 	}
 	public function getTingkt()
 	{

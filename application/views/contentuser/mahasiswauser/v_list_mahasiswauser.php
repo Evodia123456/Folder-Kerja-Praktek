@@ -12,8 +12,7 @@
 					<th>Jenis Kelamin</th>
 					<th>Alamat</th>
 					<th>Tanggal Lahir</th>
-					<th>IPK</th>
-					<th>Gambar</th>
+					<>Gambar</>
 					<th>Action</th>
 				</tr>
 			</thead>
